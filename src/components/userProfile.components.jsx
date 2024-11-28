@@ -17,7 +17,7 @@ const UserProfile = () => {
         return;
       }
 
-      const response = await fetch(`http://localhost:8000/api/v1/${endpoint}`, {
+      const response = await fetch(`http://localhost:8000/api/v1/role/${endpoint}`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },

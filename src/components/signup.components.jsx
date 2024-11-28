@@ -12,7 +12,7 @@ const SignUp = () => {
     e.preventDefault(); // Prevent form refresh
 
     try {
-      const response = await fetch("http://localhost:8000/api/v1/register", {
+      const response = await fetch("http://localhost:8000/api/v1/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -26,10 +26,9 @@ const SignUp = () => {
         setTimeout(() => navigate("/sign-in"), 2000);
       } else {
         const { message } = await response.json();
-        toast.error(`Registration failed: ${message}`);
+        toast.error(`${message}`);
       }
     } catch (error) {
-      console.error("Error during registration:", error);
       toast.error("An error occurred. Please try again later.");
     }
   };

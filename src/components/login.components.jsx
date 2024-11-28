@@ -14,7 +14,7 @@ const Login = () => {
     e.preventDefault(); // Prevent form refresh
 
     try {
-      const response = await fetch("http://localhost:8000/api/v1/login", {
+      const response = await fetch("http://localhost:8000/api/v1/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -26,7 +26,7 @@ const Login = () => {
         const { message, data } = await response.json();
         setDispatch({ type: "LOGIN", payload: data });
         toast.success(`${message}. Welcome, ${data.user.name}!`);
-        
+
         setTimeout(() => {
             navigate("/user-profile");
           }, 2000);

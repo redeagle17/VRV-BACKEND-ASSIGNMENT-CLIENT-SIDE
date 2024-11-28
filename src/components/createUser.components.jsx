@@ -12,14 +12,13 @@ const CreateUser = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [role, setRole] = useState('');
-  const navigate = useNavigate();
   const userData = JSON.parse(localStorage.getItem("Users"));
   const accessToken = userData.accessToken;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8000/api/v1/create-user", {
+      const response = await fetch("http://localhost:8000/api/v1/role/create-user", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
