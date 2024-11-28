@@ -31,7 +31,9 @@ const CreateUser = () => {
       if (response.ok) {
         const { message } = await response.json();
         toast.success(`${message}!`);
-        setTimeout(() => navigate("/user-profile"), 2000);
+        setName('');
+        setEmail('');
+        setRole('');
       } else {
         const { message } = await response.json();
         toast.error(`${message}`);
