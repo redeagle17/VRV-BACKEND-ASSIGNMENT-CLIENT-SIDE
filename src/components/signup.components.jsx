@@ -23,7 +23,7 @@ const SignUp = () => {
       if (response.ok) {
         const { message, data } = await response.json();
         toast.success(`${message}. Welcome, ${data.name}! Redirecting to sign-in...`);
-        setTimeout(() => navigate("/sign-in"), 3000); // Redirect after 3 seconds
+        setTimeout(() => navigate("/sign-in"), 2000);
       } else {
         const { message } = await response.json();
         toast.error(`Registration failed: ${message}`);
@@ -35,54 +35,61 @@ const SignUp = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h3>Sign Up</h3>
+    <div className="App">
+        <div className="auth-wrapper">
+            <div className="auth-inner">
+                <form onSubmit={handleSubmit}>
+                    <h3>VRV SECURTIY</h3>
+                    <h3>Sign Up</h3>
 
-      <div className="mb-3">
-        <label>Enter name</label>
-        <input
-          type="text"
-          name="name"
-          className="form-control"
-          placeholder="Enter name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-      </div>
+                    <div className="mb-3">
+                        <label>Enter name</label>
+                        <input
+                        type="text"
+                        name="name"
+                        className="form-control"
+                        placeholder="Enter name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        />
+                    </div>
 
-      <div className="mb-3">
-        <label>Email address</label>
-        <input
-          type="email"
-          name="email"
-          className="form-control"
-          placeholder="Enter email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </div>
+                    <div className="mb-3">
+                        <label>Email address</label>
+                        <input
+                        type="email"
+                        name="email"
+                        className="form-control"
+                        placeholder="Enter email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        />
+                    </div>
 
-      <div className="mb-3">
-        <label>Password</label>
-        <input
-          type="password"
-          name="password"
-          className="form-control"
-          placeholder="Enter password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </div>
+                    <div className="mb-3">
+                        <label>Password</label>
+                        <input
+                        type="password"
+                        name="password"
+                        className="form-control"
+                        placeholder="Enter password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </div>
 
-      <div className="d-grid">
-        <button type="submit" className="btn btn-primary">
-          Sign Up
-        </button>
-      </div>
-      <p className="forgot-password text-right">
-        Already registered? <a href="/sign-in">Sign in</a>
-      </p>
-    </form>
+                    <div className="d-grid">
+                        <button type="submit" className="btn btn-primary">
+                        Sign Up
+                        </button>
+                    </div>
+                    <p className="forgot-password text-right">
+                        Already registered? <a href="/sign-in">Sign in</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
   );
 };
 
