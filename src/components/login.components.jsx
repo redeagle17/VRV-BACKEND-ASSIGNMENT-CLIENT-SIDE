@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import AuthContext from '../context/AuthContext';
+import AuthContext from '../context/AuthContext.jsx';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -24,11 +24,9 @@ const Login = () => {
 
       if (response.ok) {
         const { message, data } = await response.json();
-        setDispatch({ type: "LOGIN", payload: payload });
+        setDispatch({ type: "LOGIN", payload: data });
         toast.success(`${message}. Welcome, ${data.user.name}!`);
         
-        // Store the access token in localStorage
-        localStorage.setItem("accessToken", data.accessToken);
         setTimeout(() => {
             navigate("/user-profile");
           }, 2000);

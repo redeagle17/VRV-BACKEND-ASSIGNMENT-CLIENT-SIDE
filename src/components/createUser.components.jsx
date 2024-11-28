@@ -13,7 +13,8 @@ const CreateUser = () => {
   const [email, setEmail] = useState('');
   const [role, setRole] = useState('');
   const navigate = useNavigate();
-  const accessToken = localStorage.getItem("accessToken");
+  const userData = JSON.parse(localStorage.getItem("Users"));
+  const accessToken = userData.accessToken;
 
   const handleSubmit = async (e) => {
     e.preventDefault();

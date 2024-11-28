@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import AuthContext from "../context/AuthContext";
 
 const UserProfile = () => {
-  const accessToken = localStorage.getItem("accessToken");
+  const userData = JSON.parse(localStorage.getItem("Users"));
+  const accessToken = userData.accessToken;
+  const { setDispatch } = useContext(AuthContext);
   const navigate = useNavigate();
 
   // Handle service request
@@ -33,9 +36,8 @@ const UserProfile = () => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("accessToken"); 
+    setDispatch({ type: "LOGOUT" });
     toast.success("You have been logged out.");
-    setTimeout(() => navigate("/sign-in"), 2000);
   };
 
   return (
