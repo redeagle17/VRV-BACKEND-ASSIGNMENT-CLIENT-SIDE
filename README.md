@@ -1,8 +1,26 @@
-# React + Vite
+# Backend Developer Intern - VRV Security
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Frontend for Role-Based Access Control (RBAC) of Secure Vulnerability Management System
 
-Currently, two official plugins are available:
+A system where users can manage, assign, and resolve vulnerabilities detected in their organization.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
+
+This is a frontend application developed to demonstrate **Role-Based Access Control (RBAC)** User Interface.
+
+## Live Demo
+
+You can access the application : [**Link**](https://vrv-backend-assignment-client-side.vercel.app/)
+
+## Technologies Used
+
+- **Frontend**: React.js, Bootstrap
+- **Deployment**: Vercel
+
+## UI Photos
+You can access the ui photos : [**Link**](https://drive.google.com/drive/folders/1NhbaupHoe25EqQzD5omudvVmPNgHc38R?usp=sharing)
+
+## Admin Login Credentials
+
+- **email**: admin@gmail.com
+- **password**: 123456
