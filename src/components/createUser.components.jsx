@@ -18,7 +18,7 @@ const CreateUser = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8000/api/v1/role/create-user", {
+      const response = await fetch("https://vrv-backend-assignment.vercel.app/api/v1/role/create-user", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

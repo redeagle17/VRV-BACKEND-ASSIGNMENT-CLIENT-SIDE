@@ -12,7 +12,7 @@ const SignUp = () => {
     e.preventDefault(); // Prevent form refresh
 
     try {
-      const response = await fetch("http://localhost:8000/api/v1/auth/register", {
+      const response = await fetch("https://vrv-backend-assignment.vercel.app/api/v1/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

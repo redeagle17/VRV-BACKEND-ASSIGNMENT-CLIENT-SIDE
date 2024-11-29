@@ -14,7 +14,7 @@ const Login = () => {
     e.preventDefault(); // Prevent form refresh
 
     try {
-      const response = await fetch("http://localhost:8000/api/v1/auth/login", {
+      const response = await fetch("https://vrv-backend-assignment.vercel.app/api/v1/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
